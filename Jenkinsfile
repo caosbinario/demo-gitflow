@@ -1,9 +1,10 @@
 @Library('jenkinsLibs') _
 dockerMultibranchPipeline(
     dockerfilePath: "Dockerfile",
-    dockerImage: "caosbinario/demo-gitflow:1.0.4",
+    dockerImage: "caosbinario/demo-gitflow:",
     dockerContext: ".",
-    dockerArgs: "--build-arg app_version=1.0.4",
+    dockerVersion: "1.0.0-${BUILD_ID}",
+    dockerArgs: "--build-arg app_version=${dockerVersion}",
     dockerDevTag: "-dev",
     dockerQATag: "-qa",
     dockerPRDTag: ""
