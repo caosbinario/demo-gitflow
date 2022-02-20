@@ -1,5 +1,5 @@
 @Library('jenkinsLibs') _
-dockerPipeline(
+dockerMultibranchPipeline(
     dockerfilePath: "Dockerfile",
     dockerImage: "caosbinario/demo-gitflow:1.0.${BUILD_ID}",
     dockerContext: ".",
